@@ -7,7 +7,7 @@ description: |
   language, stock AI words, bold labels, or filler. Based on Wikipedia's "Signs of AI writing."
 license: MIT
 metadata:
-  version: "3.1.0"
+  version: "3.2.0"
 ---
 
 # Humanizer: remove AI writing patterns
@@ -16,7 +16,7 @@ Rewrite AI-sounding text so it reads like the writer, not a chatbot. Keep what i
 
 ## Why AI text sounds the way it does
 
-A language model writes whatever is most likely to come next, so by default it makes the choice that fits the widest range of readers and subjects. A human writer chooses for one reader and one subject, so their choices are uneven and specific. Every pattern below is one form of the default choice:
+Model training, alignment, prompts and genre affect writing choices. These patterns describe recurring editorial problems; they do not establish who wrote a passage:
 
 - **Staging.** The sentence signals importance instead of adding a fact, with a contrast that only adds weight or a one-line closer that repeats the point.
 - **Rhythm by rule.** Triads and dashes applied everywhere, whether or not the meaning asks for them.
@@ -25,9 +25,9 @@ A language model writes whatever is most likely to come next, so by default it m
 - **Leftovers.** Chat wrappers and drafting moves that were never meant for the reader.
 - **Wrong reader.** A reply re-explains background the other person already has, so the decision arrives last.
 
-Word habits change with every model release. The structural habits above persist, so they lead the list below.
+Lexical and structural habits vary across models, genres and time. The order below is an editing heuristic, not a validated ranking of authorship signals.
 
-Two rules follow from this. Every sentence you keep must add something the reader did not already have, from earlier in the text or from the conversation around it. A tell counts in proportion to how rarely a careful writer would make it on purpose. The patterns are numbered strongest first: §1 to §5 justify an edit on one sighting, and a pattern marked *weak alone* needs company from other tells in the same passage before you act.
+Keep information the reader needs, including useful summaries and required reporting. Edit a pattern when it harms meaning, clarity or the intended voice. Its presence alone is not a reason to edit or an authorship verdict.
 
 ## How to work
 
@@ -44,6 +44,14 @@ If the user gives a writing sample, read it first and match its sentence length,
 
 Without a sample, take the voice from the kind of text. Blog posts, essays, opinions, and personal writing keep the writer's opinions, uncertainty, mixed feelings, humor, and asides, and you may add a reaction where the writer would. Reference, technical, legal, and factual text stays neutral and plain. Removing tells is half the job; the result must still sound like a person.
 
+### Academic and scientific writing
+
+Identify the venue, article type and section before editing. Use [venue profiles](research/venue-profiles.md) when available. Current author instructions and the writer's evidence take precedence over stylistic defaults below.
+
+Preserve numbers with their units, denominators, comparators and time points; citations and their claim attachments; equations, variable names, technical compounds, uncertainty, negation and causal scope. Keep necessary hedges, passive methods descriptions, repeated measurement names, structured abstracts and required headings. Do not turn association into causation, a null result into equivalence, or a simulation into a physical validation. Do not invent experience, opinions or results to add voice. If a clearer rewrite cannot preserve the claim, retain the original and flag the uncertainty.
+
+Match disciplinary function, not a caricature of a publisher. Historical examples are pre-ChatGPT publications, not proven machine-free writing. No word list or rewrite guarantees removal of model fingerprints. Follow the venue's current disclosure rules. See the [evidence review](research/README.md) for sources and limitations.
+
 ### What to return
 
 **Pasted text (default).** Return the draft, a short list of remaining patterns, and the final rewrite.
@@ -54,7 +62,7 @@ Without a sample, take the voice from the kind of text. Blog posts, essays, opin
 
 ## A. Staging instead of stating
 
-These are the strongest and most frequent tells in current model prose. Act on one sighting.
+These patterns can obscure a point. Edit when they do so in this context.
 
 ### 1. Not X but Y
 
@@ -382,7 +390,7 @@ A model writes for a reader who shares no context, because that fits the widest 
 
 ## When not to act
 
-Each pattern describes a default choice, and a person can make any one of them on purpose. Leave a watched phrase alone inside a quotation, a title, a proper name, or a passage that discusses the phrase rather than uses it. Salutations and sign-offs on a letter or comment predate chatbots. Text written before November 30, 2022 is not AI-written. People who judge by feel do little better than chance, and human writing keeps absorbing AI habits, so several tells together are the safeguard.
+Each pattern describes a default choice, and a person can make any one of them on purpose. Leave a watched phrase alone inside a quotation, a title, a proper name, or a passage that discusses the phrase rather than uses it. Salutations and sign-offs on a letter or comment predate chatbots. Publication before November 30, 2022 is a historical sampling boundary, not proof of human authorship; text-generating models existed earlier. Detection by readers depends on expertise and task. Several stylistic patterns together still do not prove AI use.
 
 Keep the details that carry the writer's voice unless they hurt the meaning:
 

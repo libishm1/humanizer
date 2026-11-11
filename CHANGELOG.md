@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.0
+
+- Added academic editing priorities and an evidence review covering venue differences, historical examples, citation tracing and evaluation design.
+- Corrected the pre-ChatGPT authorship claim and qualified unvalidated pattern rankings.
+- Added a tested local-model integration patch with conservative scientific checks and candidate audit trails.
+
+
 ## 3.1.0
 
 - Added pattern #26 and section F for replies that re-explain context the reader already has (#269). It acts on replies, not standalone writing. 26 patterns total.
