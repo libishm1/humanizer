@@ -15,9 +15,15 @@ Humanizer makes AI-written text sound like a person wrote it, without changing w
 
 In a blind test, judges preferred Humanizer's rewrite over the original AI text 16 times out of 16 ([#229](https://github.com/blader/humanizer/issues/229)).
 
-Humanizer edits for human readers. Getting past AI detectors is not a goal, and detectors still flag most of its output.
+Humanizer edits for human readers. No detector result or removal of all model fingerprints is promised.
 
-## The five strongest tells
+## Academic writing extension
+
+Version 3.2.0 preserves scientific uncertainty, causal scope, technical terminology and venue requirements before applying general style rules. The [research dossier](research/README.md) includes an audit of the original source chain, backward/forward citation links, 25 historical paper exemplars, venue profiles and six research-paper ideas. It is a scoped review, not an exhaustive systematic review.
+
+For the separate fine-tuned rewriter, see the [local-model integration](integrations/local-model/README.md). Its tested patch adds academic checks to `hz` without changing the trained prompt. Profile flags label review context; they are not new model weights or validated journal-style conditioning.
+
+## Five patterns to review first
 
 These are the most common signs of AI writing, and Humanizer rewrites any of them on sight:
 
@@ -105,7 +111,7 @@ A language model writes whatever is most likely to come next, so by default it m
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 > Wikipedia, ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
 
-Humanizer marks every tell it finds, strongest first. It drafts a rewrite without treating the original structure as fixed, checks the draft against the patterns and the original claims, and then writes the final version. It does not make things up. A name, number, date, quote, citation, or other factual detail must come from the source or the writer, and if a sentence needs a detail that is missing, Humanizer asks instead of inventing one.
+Humanizer reviews recurring patterns in context. Their order is an editing heuristic, not a validated authorship ranking. It drafts a rewrite without treating the original structure as fixed, checks the draft against the patterns and the original claims, and then writes the final version. It does not make things up. A name, number, date, quote, citation, or other factual detail must come from the source or the writer, and if a sentence needs a detail that is missing, Humanizer asks instead of inventing one.
 
 When you paste text, Humanizer shows its work: the first rewrite, a short critique of anything that still sounds artificial, and the final version. Point it at a file and it changes only the prose, leaving code, data, frontmatter, and link targets alone. Personal writing keeps the writer's opinions and quirks. Technical and reference prose stays neutral and plain.
 
